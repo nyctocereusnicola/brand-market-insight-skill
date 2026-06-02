@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{REPORT_TITLE}}</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --surface: #f8f9fa;
+    --border: #e9ecef;
+    --text: #212529;
+    --text-secondary: #6c757d;
+    --accent: #7F77DD;
+    --accent-light: #EEEDFE;
+    --teal: #1D9E75;
+    --coral: #D85A30;
+    --amber: #BA7517;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.7;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+  }
+  .report-header {
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 32px;
+    margin-bottom: 40px;
+  }
+  .report-header h1 {
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+  .report-header .meta {
+    font-size: 13px;
+    color: var(--text-secondary);
+  }
+  .exec-summary {
+    background: var(--accent-light);
+    padding: 24px 28px;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    border-left: 4px solid var(--accent);
+  }
+  .exec-summary h2 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+  .exec-summary p {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+  .key-findings {
+    margin-bottom: 40px;
+  }
+  .key-findings h2 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 24px;
+    font-size: 13px;
+  }
+  th {
+    background: var(--surface);
+    padding: 10px 14px;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 2px solid var(--border);
+    color: var(--text-secondary);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+  }
+  tr:hover td { background: var(--surface); }
+  .confidence-high { color: var(--teal); font-weight: 500; }
+  .confidence-mid { color: var(--amber); font-weight: 500; }
+  .confidence-low { color: var(--coral); font-weight: 500; }
+  section {
+    margin-bottom: 40px;
+  }
+  section h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+    color: var(--accent);
+  }
+  section h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 24px 0 12px;
+  }
+  section h4 {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 16px 0 8px;
+  }
+  p { font-size: 14px; margin-bottom: 12px; }
+  ul, ol { margin-bottom: 16px; padding-left: 24px; font-size: 14px; }
+  li { margin-bottom: 6px; }
+  .insight-box {
+    background: var(--surface);
+    padding: 16px 20px;
+    border-radius: 8px;
+    margin: 16px 0;
+    font-size: 13px;
+  }
+  .insight-box strong { color: var(--accent); }
+  .tag {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 500;
+    margin-right: 6px;
+  }
+  .tag-market { background: #EEEDFE; color: #534AB7; }
+  .tag-brand { background: #E1F5EE; color: #0F6E56; }
+  .tag-consumer { background: #FAECE7; color: #993C1D; }
+  .tag-channel { background: #E6F1FB; color: #185FA5; }
+  .tag-trend { background: #FAEEDA; color: #854F0B; }
+  .appendix {
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+  }
+  .appendix h2 { font-size: 18px; margin-bottom: 16px; color: var(--text-secondary); }
+  .appendix p { font-size: 12px; color: var(--text-secondary); }
+  .disclaimer {
+    margin-top: 24px;
+    padding: 16px;
+    background: var(--surface);
+    border-radius: 8px;
+    font-size: 11px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+  @media (max-width: 640px) {
+    body { padding: 20px 16px 60px; }
+    .report-header h1 { font-size: 22px; }
+    table { font-size: 12px; }
+    th, td { padding: 8px 10px; }
+  }
+  @media print {
+    body { max-width: 100%; }
+    section { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<header class="report-header">
+  <h1>{{REPORT_TITLE}}</h1>
+  <div class="meta">
+    {{REPORT_DATE}} | {{REPORT_AUTHOR}} | {{REPORT_MARKET}} | {{REPORT_CATEGORY}}
+  </div>
+</header>
+
+<div class="exec-summary">
+  <h2>Executive Summary</h2>
+  <p>{{EXECUTIVE_SUMMARY}}</p>
+</div>
+
+<section class="key-findings">
+  <h2>Key Findings at a Glance</h2>
+  {{KEY_FINDINGS_TABLE}}
+</section>
+
+<section>
+  <h2>1. Market Overview</h2>
+  {{SECTION_1}}
+</section>
+
+<section>
+  <h2>2. Competitive Landscape</h2>
+  {{SECTION_2}}
+</section>
+
+<section>
+  <h2>3. Consumer Profiling</h2>
+  {{SECTION_3}}
+</section>
+
+<section>
+  <h2>4. Channel Analysis</h2>
+  {{SECTION_4}}
+</section>
+
+<section>
+  <h2>5. Trends and Opportunities</h2>
+  {{SECTION_5}}
+</section>
+
+<section>
+  <h2>6. Brand Strategy Recommendations</h2>
+  {{SECTION_6}}
+</section>
+
+<div class="appendix">
+  <h2>Appendix</h2>
+  <h3>A. Data Sources and Methodology</h3>
+  {{APPENDIX_A}}
+  <h3>B. Competitor List</h3>
+  {{APPENDIX_B}}
+  <div class="disclaimer">
+    <strong>Disclaimer</strong><br>
+    This report is prepared for informational purposes only. Data sources include publicly available information, industry reports, and web research as of the report date. Market estimates and projections involve inherent uncertainty. This report does not constitute investment or business advice. All third-party trademarks and brand names are property of their respective owners.
+  </div>
+</div>
+
+</body>
+</html>
