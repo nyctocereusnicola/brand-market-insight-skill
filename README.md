@@ -120,9 +120,9 @@ Beauty 美妆 (cosmetics, skincare, personal care / 彩妆、护肤、个护), W
 
 ## Author / 作者
 
-Created by [Nicola Chen](https://github.com/nyctocereusnicola) — Brand strategist with 16 years FMCG marketing experience, specializing in beauty, wellness, and lifestyle brands across global markets.
+Created by [Nicola Chen](https://github.com/nyctocereusnicola) — Been through finance, branding, marketing, and cross-border commerce. Obsessed with brands and markets, drawn to interesting things, builds with attitude and personality. Serving global markets.
 
-16年FMCG市场营销经验的品牌策略师，专注美妆、健康、生活方式品类，服务全球市场。
+扎过金融、品牌、营销、跨境这几个坑。对品牌和市场有执念，喜欢有趣的玩意，做有态度有个性的东西。服务全球市场。
 
 ## License / 许可证
 
